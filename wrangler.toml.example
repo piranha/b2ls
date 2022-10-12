@@ -1,0 +1,24 @@
+# -*- mode: conf-toml -*-
+
+name = "b2ls"
+main = "src/index.js"
+compatibility_date = "2022-10-11"
+
+kv_namespaces = [
+# wrangler kv:namespace create B2LS
+# wrangler kv:namespace create B2LS --preview
+#  { binding = "B2LS", id = "XXX", preview_id = "XXX" }
+]
+
+routes = [
+#	{ pattern = "custom.example.net", custom_domain = true, zone_name = "example.net" }
+]
+
+
+[vars]
+B2BUCKET = "[[B2BUCKET]]"
+B2ACCESS = "[[B2ACCESS]]"
+
+# The necessary secrets are:
+# - B2SECRET
+# Access key value should be set with `wrangler secret put B2SECRET`
